@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/homeScreen">
+
+    <fragment
+        tools:layout="@layout/screen_splash"
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.noteapp.presentation.screen.splash.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </fragment>
+    <fragment
+
+        tools:layout="@layout/screen_home"
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.noteapp.presentation.screen.home.HomeScreen"
+        android:label="Your Notes" >
+        <action
+            android:id="@+id/action_homeScreen_to_editScreen"
+            app:destination="@id/editScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_addNoteScreen"
+            app:destination="@id/addNoteScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_trashScreen"
+            app:destination="@id/trashScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_archiveScreen"
+            app:destination="@id/archiveScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_edit"
+        android:id="@+id/editScreen"
+        android:name="uz.gita.noteapp.presentation.screen.edit.EditNote"
+        android:label="Edit Note">
+
+        <argument
+            android:name="note"
+            app:argType="uz.gita.noteapp.data.model.NoteData" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_add"
+        android:id="@+id/addNoteScreen"
+        android:name="uz.gita.noteapp.presentation.screen.addnote.AddNote"
+        android:label="Add note" />
+    <fragment
+        tools:layout="@layout/screen_trash"
+        android:id="@+id/trashScreen"
+        android:name="uz.gita.noteapp.presentation.screen.trash.TrashScreen"
+        android:label="Notes in trash" />
+    <fragment
+        tools:layout="@layout/screen_archive"
+        android:id="@+id/archiveScreen"
+        android:name="uz.gita.noteapp.presentation.screen.archive.Archives"
+        android:label="Notes in archives" />
+</navigation>
